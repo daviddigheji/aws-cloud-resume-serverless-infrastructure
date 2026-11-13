@@ -1,0 +1,24 @@
+name: Verify AWS OIDC Authentication
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  verify-oidc:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Configure AWS credentials with OIDC
+        uses: aws-actions/configure-aws-credentials@v6.2.3
+        with:
+          role-to-assume: arn:aws:iam::008971670441:role/CloudResume-GitHub-DeployRole
+          aws-region: eu-west-2
+          role-session-name: oidc-verification-${{ github.run_id }}
+
+      - name: Verify AWS identity
+        run: aws sts get-caller-identity
