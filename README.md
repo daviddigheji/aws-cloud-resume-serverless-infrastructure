@@ -1,4 +1,5 @@
-# AWS Cloud Resume Challenge — David Digheji
+# AWS-cloud-resume-serverless-infrastructure
+ — David Digheji
 
 A production-style serverless cloud resume platform built on AWS, demonstrating cloud engineering, infrastructure automation, CI/CD, security, troubleshooting, incident response, and operational documentation.
 
@@ -249,7 +250,7 @@ The DNS validation configuration was investigated and corrected, certificate ren
 ## Repository Structure
 
 ```text
-aws-cloud-resume-challenge/
+aws-cloud-resume-serverless-infrastructure/
 ├── .github/
 ├── docs/
 │   ├── CHANGELOG.md
